@@ -15,12 +15,13 @@ class MailController extends Controller
     public function create_mail(Request $request)
     {
         $data = $request->all();
-        $template = View::make('email-templates.template', ['content' => $request->content])->render();
-
+        $template = view()->make('email-templates.renewal-loyalty', ['title' => $request->title])->render();
+        $filename = time() . '.html';
         $public = public_path();
-        $file = fopen($public . '/templates/' . $request->file_name . '.html' , 'w');
+        $file = fopen($public . '/templates/' . $filename , 'w');
         fwrite($file, $template);
-        echo 'done';
+
+        return view('download', ['filename' => $filename]);
     }
 
     public function test($template)

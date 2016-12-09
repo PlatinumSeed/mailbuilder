@@ -1,5 +1,6 @@
 /node_modules
 /public/storage
+/public/templates
 /storage/*.key
 /vendor
 /.idea
