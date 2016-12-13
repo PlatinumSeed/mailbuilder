@@ -53,7 +53,7 @@
 					</tr>
 					<tr>
 						<td valign="top" colspan="3" align="center">
-							<p style="color: #76828c; font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 50px; line-height: 55px; margin-top: 0px; margin-bottom: 5px;">{{$title or 'Title Goes Here'}}</p>
+							<p style="color: #76828c; font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 50px; line-height: 55px; margin-top: 0px; margin-bottom: 5px;">{{$data['title'] or 'Title Goes Here'}}</p>
 						</td>
 					</tr>
 					<tr>
@@ -61,7 +61,7 @@
 					</tr>
 					<tr>
 						<td width="750" valign="top" colspan="3" align="center">
-							<p style="color: #a1be73; font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 20px; line-height: 31px; margin-top: 0px; margin-bottom: 0px;">{{$subtitle or 'Subtitle Goes Here'}}</p>
+							<p style="color: #a1be73; font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 20px; line-height: 31px; margin-top: 0px; margin-bottom: 0px;">{{$data['sub_title'] or 'Subtitle Goes Here'}}</p>
 						</td>
 					</tr>
 					<tr>
@@ -83,15 +83,11 @@
 					<tr>
 						<td width="350" valign="top">
 							<img align="left" class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/pic-christelle.jpg" alt="" title="" width="129" height="108">
-							<p style="color: #768b5a; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 24px; margin-top: 0px; margin-bottom: 15px;">
-								{{Lipsum::short()->text(3)}}
-							</p>
+							{!! $data['about_left_content'] !!}
 						</td>
 						<td width="50"></td>
 						<td width="350" valign="top">
-							<p style="color: #768b5a; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 24px; margin-top: 0px; margin-bottom: 15px;">
-								{{Lipsum::short()->text(3)}}
-							</p>
+							{!! $data['about_left_content'] !!}
 						</td>
 					</tr>
 				</table>
