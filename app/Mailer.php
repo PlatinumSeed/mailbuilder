@@ -14,13 +14,13 @@ class Mailer extends Model
     public static function save_new_mail($data)
     {
         //upload Dr image
-        $file_name = (new Controller)->upload_image($data['doctor_image'], $data['name'], 129, 108);
+        $file_name = self::upload_image($data['doctor_image'], $data['name'], 129, 108);
         $data['doctor_image'] = $file_name;
 
         //upload link block images
         foreach ($data['link_block'] as $index => $link_block)
         {
-            $file_name = (new Controller)->upload_image($link_block['image'], $data['name'], 230, 183);
+            $file_name = self::upload_image($link_block['image'], $data['name'], 230, 183);
             $data['link_block'][$index]['image'] = $file_name;
         }
 
@@ -40,6 +40,20 @@ class Mailer extends Model
         $mailer->save();
 
         return $mailer;
+    }
+
+    static function upload_image($image, $prefix, $width, $height)
+    {
+        $directory = public_path() . '/uploads/images/';
+        $filename = str_slug($prefix . '-' . str_random(5) . '.jpg');
+        $path = $directory . '/' . $filename;
+        // read image from temporary file
+        $img = Image::make($image);
+        // resize image
+        $img->fit($width, $height);
+        // save image
+        $img->encode('jpg', 80)->save($path);
+        return $filename;
     }
 
 }

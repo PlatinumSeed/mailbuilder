@@ -114,17 +114,4 @@ class Controller extends BaseController
         return $data;
     }
 
-    function upload_image($image, $prefix, $width, $height)
-    {
-        $directory = public_path() . '/uploads/images/';
-        $filename = str_slug($prefix . '-' . time() . '.jpg');
-        $path = $directory . '/' . $filename;
-        // read image from temporary file
-        $img = Image::make($image);
-        // resize image
-        $img->fit($width, $height);
-        // save image
-        $img->encode('jpg', 80)->save($path);
-        return $filename;
-    }
 }
