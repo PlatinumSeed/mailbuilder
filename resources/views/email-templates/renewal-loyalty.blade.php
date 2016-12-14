@@ -1,3 +1,14 @@
+@php
+	function nl2p($string) {
+		$paragraphs = explode("\n", $string);
+		for ($i = 0; $i < count ($paragraphs); $i++){
+			 $paragraphs[$i] = '<p style="color: #768b5a; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 24px; margin-top: 0px; margin-bottom: 15px;">' . $paragraphs[$i] . '</p>';
+		}
+		$paragraphs = implode ('', $paragraphs);
+		return $paragraphs;
+	}
+@endphp
+
 @extends('email-templates.layouts.standard')
 
 @section('content')
@@ -83,11 +94,11 @@
 					<tr>
 						<td width="350" valign="top">
 							<img align="left" class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/pic-christelle.jpg" alt="" title="" width="129" height="108">
-							{!! $data['about_left_content'] !!}
+							{!! nl2p($data['about_left_content']) !!}
 						</td>
 						<td width="50"></td>
 						<td width="350" valign="top">
-							{!! $data['about_left_content'] !!}
+							{!! nl2p($data['about_left_content']) !!}
 						</td>
 					</tr>
 				</table>
@@ -103,71 +114,29 @@
 		<tr>
 			<td height="50" colspan="5"></td>
 		</tr>
-		<tr>
-			<td valign="top">
-				<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/promo_pic.png" alt="" title="" width="230" height="183">
-				<p style="color: #76828c; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 5px; text-align:center;">Dermaquest</p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 5px; text-align:center;"><strong>Product Promotion</strong></p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 30px; text-align:center;">Purchase the Stem Cell 3D Complex or Stem Cell 3D Hydrafirm Serum and receive a FREE Stem Cell 3D Eyelift, valued at R1 095!</p>
-				<a href="http://www.skinrenewal.co.za/loyalty-products" target="_blank" title="" style="color: #7f8c76; text-decoration: none;">
-					<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/btn-read-more.png" alt="" title="" width="229" height="37">
-				</a>
-			</td>
-			<td width="30" valign="top"></td>
-			<td valign="top">
-				<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/promo_pic.png" alt="" title="" width="230" height="183">
-				<p style="color: #76828c; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 5px; text-align:center;">Dermaquest</p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 5px; text-align:center;"><strong>Product Promotion</strong></p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 30px; text-align:center;">Purchase the Stem Cell 3D Complex or Stem Cell 3D Hydrafirm Serum and receive a FREE Stem Cell 3D Eyelift, valued at R1 095!</p>
-				<a href="http://www.skinrenewal.co.za/loyalty-products" target="_blank" title="" style="color: #7f8c76; text-decoration: none;">
-					<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/btn-read-more.png" alt="" title="" width="229" height="37">
-				</a>
-			</td>
-			<td width="30" valign="top"></td>
-			<td valign="top">
-				<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/promo_pic.png" alt="" title="" width="230" height="183">
-				<p style="color: #76828c; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 5px; text-align:center;">Dermaquest</p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 5px; text-align:center;"><strong>Product Promotion</strong></p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 30px; text-align:center;">Purchase the Stem Cell 3D Complex or Stem Cell 3D Hydrafirm Serum and receive a FREE Stem Cell 3D Eyelift, valued at R1 095!</p>
-				<a href="http://www.skinrenewal.co.za/loyalty-products" target="_blank" title="" style="color: #7f8c76; text-decoration: none;">
-					<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/btn-read-more.png" alt="" title="" width="229" height="37">
-				</a>
-			</td>
-		</tr>
-		<tr>
-			<td height="50" colspan="5"></td>
-		</tr>
-		<tr>
-			<td valign="top">
-				<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/promo_pic.png" alt="" title="" width="230" height="183">
-				<p style="color: #76828c; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 5px; text-align:center;">Dermaquest</p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 5px; text-align:center;"><strong>Product Promotion</strong></p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 30px; text-align:center;">Purchase the Stem Cell 3D Complex or Stem Cell 3D Hydrafirm Serum and receive a FREE Stem Cell 3D Eyelift, valued at R1 095!</p>
-				<a href="http://www.skinrenewal.co.za/loyalty-products" target="_blank" title="" style="color: #7f8c76; text-decoration: none;">
-					<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/btn-read-more.png" alt="" title="" width="229" height="37">
-				</a>
-			</td>
-			<td width="30" valign="top"></td>
-			<td valign="top">
-				<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/promo_pic.png" alt="" title="" width="230" height="183">
-				<p style="color: #76828c; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 5px; text-align:center;">Dermaquest</p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 5px; text-align:center;"><strong>Product Promotion</strong></p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 30px; text-align:center;">Purchase the Stem Cell 3D Complex or Stem Cell 3D Hydrafirm Serum and receive a FREE Stem Cell 3D Eyelift, valued at R1 095!</p>
-				<a href="http://www.skinrenewal.co.za/loyalty-products" target="_blank" title="" style="color: #7f8c76; text-decoration: none;">
-					<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/btn-read-more.png" alt="" title="" width="229" height="37">
-				</a>
-			</td>
-			<td width="30" valign="top"></td>
-			<td valign="top">
-				<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/promo_pic.png" alt="" title="" width="230" height="183">
-				<p style="color: #76828c; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 5px; text-align:center;">Dermaquest</p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 5px; text-align:center;"><strong>Product Promotion</strong></p>
-				<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 30px; text-align:center;">Purchase the Stem Cell 3D Complex or Stem Cell 3D Hydrafirm Serum and receive a FREE Stem Cell 3D Eyelift, valued at R1 095!</p>
-				<a href="http://www.skinrenewal.co.za/loyalty-products" target="_blank" title="" style="color: #7f8c76; text-decoration: none;">
-					<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/btn-read-more.png" alt="" title="" width="229" height="37">
-				</a>
-			</td>
-		</tr>
+		@foreach (array_chunk($data['link_block'], 3) as $rows)
+			<tr>
+				@foreach ($rows as $row)
+					<td valign="top">
+						<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/promo_pic.png" alt="" title="" width="230" height="183">
+						<p style="color: #76828c; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 5px; text-align:center;">{{$row['title']}}</p>
+						<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 5px; text-align:center;"><strong>P{{$row['sub_title']}}</strong></p>
+						<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 30px; text-align:center;">{{$row['content']}}</p>
+						<a href="{{$row['link']}}" target="_blank" title="" style="color: #7f8c76; text-decoration: none;">
+							<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/btn-read-more.png" alt="" title="" width="229" height="37">
+						</a>
+					</td>
+					@if (!$loop->last)
+						<td width="30" valign="top"></td>
+					@endif
+		        @endforeach
+			</tr>
+			@if (!$loop->last)
+				<tr>
+					<td height="50" colspan="5"></td>
+				</tr>
+			@endif
+		@endforeach
 		<tr>
 			<td height="70" colspan="5"></td>
 		</tr>
@@ -194,19 +163,19 @@
 		</tr>
 		<tr>
 			<td width="200" valign="middle" style="background-color:#b9d592;" align="center">
-				<p style="color: #ffffff;  font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 18px; line-height: 22px; margin-bottom: 0px; margin-top: 0px;">26 817 members</p>
+				<p style="color: #ffffff;  font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 18px; line-height: 22px; margin-bottom: 0px; margin-top: 0px;">{{$data['jade_members']}} members</p>
 			</td>
 			<td width="75" valign="top">
 				<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/spacer-eighteen.png" alt="" title="" width="75" height="42">
 			</td>
 			<td width="200" valign="center" style="background-color:#b9d592;" align="center">
-				<p style="color: #ffffff;  font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 18px; line-height: 22px; margin-bottom: 0px; margin-top: 0px;">1891 members</p>
+				<p style="color: #ffffff;  font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 18px; line-height: 22px; margin-bottom: 0px; margin-top: 0px;">{{$data['pearl_members']}} members</p>
 			</td>
 			<td width="75" valign="top">
 				<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/spacer-eighteen.png" alt="" title="" width="75" height="42">
 			</td>
 			<td width="200" valign="center" style="background-color:#b9d592;" align="center">
-				<p style="color: #ffffff;  font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 18px; line-height: 22px; margin-bottom: 0px; margin-top: 0px;">860 members</p>
+				<p style="color: #ffffff;  font-family: Century Gothic,century_gothic_ff,Apple Gothic,Verdana,sans-serif; font-size: 18px; line-height: 22px; margin-bottom: 0px; margin-top: 0px;">{{$data['diamond_members']}} members</p>
 			</td>
 		</tr>
 		<tr>

@@ -30,11 +30,10 @@ class MailerController extends Controller
         return redirect('/')->with('message', 'New Template Created');
     }
 
-    public function preview($template)
+    public function edit($id)
     {
-        //Format
-
-
-        return view('email-templates.' . $template);
+        $mailer = Mailer::find($id);
+        $data = unserialize($mailer->content);
+        return view('email-templates.renewal-loyalty', ['data' => $data]);
     }
 }

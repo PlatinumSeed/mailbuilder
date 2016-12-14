@@ -6,22 +6,27 @@
 
                 <div class="form-group">
                     <label>Image</label>
-                    <input type="file" class="form-control" placeholder="Image" v-bind:name="'link_block[' + index + ']image'" value="" />
+                    <input type="file" class="form-control" placeholder="Image" v-bind:name="'link_block[' + index + '][image]'" value="" />
                 </div>
 
                 <div class="form-group">
                     <label>Title</label>
-                    <input type="text" class="form-control" placeholder="Title" v-bind:name="'link_block[' + index + ']title'" value="" />
+                    <input type="text" class="form-control" placeholder="Title" v-bind:name="'link_block[' + index + '][title]'" value="" />
                 </div>
 
                 <div class="form-group">
                     <label>Sub Title</label>
-                    <input type="text" class="form-control" placeholder="Sub Title" v-bind:name="'link_block[' + index + ']sub_title'" value="" />
+                    <input type="text" class="form-control" placeholder="Sub Title" v-bind:name="'link_block[' + index + '][sub_title]'" value="" />
                 </div>
 
                 <div class="form-group">
                     <label>Content</label>
-                    <input type="text" class="form-control" placeholder="Content" v-bind:name="'link_block[' + index + ']content'" value="" />
+                    <input type="text" class="form-control" placeholder="Content" v-bind:name="'link_block[' + index + '][content]'" value="" />
+                </div>
+
+                <div class="form-group">
+                    <label>Link</label>
+                    <input type="text" class="form-control" placeholder="Link" v-bind:name="'link_block[' + index + '][link]'" value="" />
                 </div>
             </fieldset>
         </transition-group>

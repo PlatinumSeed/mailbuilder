@@ -44,10 +44,28 @@
 
             <addblock></addblock>
 
+            <fieldset>
+                <legend>Loyalty</legend>
 
+                <div class="form-group">
+                    <label>Jade Members</label>
+                    <input type="text" name="jade_members" class="form-control" placeholder="Jade Members">
+                </div>
+
+                <div class="form-group">
+                    <label>Pearl Members</label>
+                    <input type="text" name="pearl_members" class="form-control" placeholder="Pearl Members">
+                </div>
+
+                <div class="form-group">
+                    <label>Diamond Members</label>
+                    <input type="text" name="diamond_members" class="form-control" placeholder="Diamond Members">
+                </div>
+
+            </fieldset>
 
             <p>
-                <button class="btn btn-default" type="submit">Submit</button>
+                <button class="btn btn-success" type="submit">Submit</button>
             </p>
 
         </form>

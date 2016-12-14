@@ -15,4 +15,4 @@ Route::get('/', 'MailerController@index');
 Route::get('/create', 'MailerController@create');
 Route::post('create-mail', 'MailerController@create_mail');
 Route::get('mail', 'MailerController@mail');
-Route::get('test/{template}', 'MailerController@test');
+Route::get('edit/{id}', 'MailerController@edit');

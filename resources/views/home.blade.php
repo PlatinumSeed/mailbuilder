@@ -16,7 +16,7 @@
         <div class="row">
             @foreach ($mailers as $mailer)
                 <div class="col-xs-6 col-sm-4 col-md-2">
-                    <a href="{{url('templates')}}/{{$mailer->file_name}}" class="thumbnail">
+                    <a href="{{url('edit')}}/{{$mailer->id}}" class="thumbnail">
                         <img src="{{$mailer->preview}}" alt="{{$mailer->name}}">
                     </a>
                 </div>
