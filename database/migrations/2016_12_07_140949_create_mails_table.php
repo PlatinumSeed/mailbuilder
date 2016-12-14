@@ -13,8 +13,12 @@ class CreateMailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mails', function (Blueprint $table) {
+        Schema::create('mailers', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('file_name')->nullable();
+            $table->binary('content');
+            $table->string('preview')->nullable();
             $table->timestamps();
         });
     }

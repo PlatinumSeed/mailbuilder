@@ -1,49 +1,32 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div id="app" class="container-fluid">
-        <form class="" action="{{url('create-mail')}}" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
-            <fieldset>
-                <legend>Global</legend>
-                <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" name="title" class="form-control" placeholder="Title">
+
+    <div class="container-fluid">
+
+        @if (Session::has('message'))
+            <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
+        @endif
+
+
+        <div class="page-header">
+            <h1>Current Emails</h1>
+        </div>
+
+        <div class="row">
+            @foreach ($mailers as $mailer)
+                <div class="col-xs-6 col-sm-4 col-md-2">
+                    <a href="{{url('templates')}}/{{$mailer->file_name}}" class="thumbnail">
+                        <img src="{{$mailer->preview}}" alt="{{$mailer->name}}">
+                    </a>
                 </div>
+            @endforeach
+        </div>
 
-                <div class="form-group">
-                    <label>Sub Title</label>
-                    <input type="text" name="sub_title" class="form-control" placeholder="Sub Title">
-                </div>
+        <div class="btn-group" role="group" aria-label="...">
+            <a href="{{url('create')}}" type="button" class="btn btn-default">New Mailer</a>
+        </div>
 
-            </fieldset>
-
-            <fieldset>
-                <legend>About Section</legend>
-                <div class="form-group">
-                    <label>Doctor Photo</label>
-                    <input type="file" name="about_doctor_photo" value="" />
-                </div>
-
-                <div class="form-group">
-                    <label>Left Column Content</label>
-                    <textarea class="form-control" name="about_left_content"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Right Column Content</label>
-                    <textarea class="form-control" name="about_right_content"></textarea>
-                </div>
-            </fieldset>
-
-            <addblock></addblock>
-
-
-
-            <p>
-                <button class="btn btn-default" type="submit" name="button">Submit</button>
-            </p>
-
-        </form>
     </div>
+
 @endsection

@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'MailController@index');
-Route::post('/create-mail', 'MailController@create_mail');
-Route::get('/mail', 'MailController@mail');
-Route::get('/test/{template}', 'MailController@test');
+Route::get('/', 'MailerController@index');
+Route::get('/create', 'MailerController@create');
+Route::post('create-mail', 'MailerController@create_mail');
+Route::get('mail', 'MailerController@mail');
+Route::get('test/{template}', 'MailerController@test');
