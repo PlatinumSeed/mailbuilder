@@ -4,6 +4,8 @@ namespace App;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
+use Image;
+use Storage;
 
 class Mailer extends Model
 {
@@ -11,6 +13,17 @@ class Mailer extends Model
 
     public static function save_new_mail($data)
     {
+        //upload Dr image
+        $file_name = (new Controller)->upload_image($data['doctor_image'], $data['name'], 129, 108);
+        $data['doctor_image'] = $file_name;
+
+        //upload link block images
+        foreach ($data['link_block'] as $index => $link_block)
+        {
+            $file_name = (new Controller)->upload_image($link_block['image'], $data['name'], 230, 183);
+            $data['link_block'][$index]['image'] = $file_name;
+        }
+
         //Create the html file
         $template = view()->make('email-templates.renewal-loyalty', ['data' => $data])->render();
         $filename = time() . '.html';
@@ -28,4 +41,5 @@ class Mailer extends Model
 
         return $mailer;
     }
+
 }

@@ -93,7 +93,7 @@
 				<table>
 					<tr>
 						<td width="350" valign="top">
-							<img align="left" class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/pic-christelle.jpg" alt="" title="" width="129" height="108">
+							<img align="left" class="image_fix" src="{{url('uploads/images')}}/{{$data['doctor_image']}}" alt="" title="" width="129" height="108">
 							{!! nl2p($data['about_left_content']) !!}
 						</td>
 						<td width="50"></td>
@@ -118,7 +118,7 @@
 			<tr>
 				@foreach ($rows as $row)
 					<td valign="top">
-						<img class="image_fix" src="http://www.skinrenewal.co.za/uploads/newsletter_images/promo_pic.png" alt="" title="" width="230" height="183">
+						<img class="image_fix" src="{{url('uploads/images')}}/{{$row['image']}}" alt="{{$row['title']}}" title="{{$row['title']}}" width="230" height="183">
 						<p style="color: #76828c; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 5px; text-align:center;">{{$row['title']}}</p>
 						<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 5px; text-align:center;"><strong>P{{$row['sub_title']}}</strong></p>
 						<p style="color: #a5adb3; font-family: Lucida Grande,Lucida Sans, Lucida Sans Unicode,Verdana,Geneva,sans-serif; font-size: 13px; line-height: 22px; margin-top: 0px; margin-bottom: 30px; text-align:center;">{{$row['content']}}</p>

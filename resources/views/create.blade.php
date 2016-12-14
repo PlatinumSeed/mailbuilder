@@ -28,7 +28,7 @@
                 <legend>About Section</legend>
                 <div class="form-group">
                     <label>Doctor Photo</label>
-                    <input type="file" name="about_doctor_photo" value="" />
+                    <input class="form-control" type="file" name="doctor_image" value="" />
                 </div>
 
                 <div class="form-group">
@@ -49,17 +49,17 @@
 
                 <div class="form-group">
                     <label>Jade Members</label>
-                    <input type="text" name="jade_members" class="form-control" placeholder="Jade Members">
+                    <input type="number" name="jade_members" class="form-control" placeholder="Jade Members">
                 </div>
 
                 <div class="form-group">
                     <label>Pearl Members</label>
-                    <input type="text" name="pearl_members" class="form-control" placeholder="Pearl Members">
+                    <input type="number" name="pearl_members" class="form-control" placeholder="Pearl Members">
                 </div>
 
                 <div class="form-group">
                     <label>Diamond Members</label>
-                    <input type="text" name="diamond_members" class="form-control" placeholder="Diamond Members">
+                    <input type="number" name="diamond_members" class="form-control" placeholder="Diamond Members">
                 </div>
 
             </fieldset>
